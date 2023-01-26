@@ -1,0 +1,12 @@
+.taskcompcontainer *{
+    margin: 0px;
+}
+.taskcompcontainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+}

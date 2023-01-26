@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"Reddit",
+        "url":"https://www.reddit.com/",
+        "description":"A sometimes interesting website filled with too many people trying to be funny or interesting. Unhealthy obsession with politics.",
+        "timesvisited":0,
+        "icon":""
+    },
+    {
+        "id":2,
+        "name":"YouTube",
+        "url":"https://www.youtube.com/",
+        "description":"My favorite Russian misinformation propaganda spreading website.",
+        "timesvisited":0,
+        "icon":""
+    },
+    {
+        "id":3,
+        "name":"Foundry Virtual Tabletop",
+        "url":"https://foundryvtt.com/",
+        "description":"A place where you can play virtual tabletop games.",
+        "timesvisited":0,
+        "icon":""
+    }
+]

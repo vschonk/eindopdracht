@@ -1,0 +1,13 @@
+.navbox{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: aqua;
+    padding: 50px 0px 200px 20px;
+}
+.avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+}

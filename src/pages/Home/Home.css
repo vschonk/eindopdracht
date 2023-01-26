@@ -1,0 +1,26 @@
+.gridcontainer{
+    display: grid;
+    padding: 20px;
+    grid-auto-columns: 2fr 1fr;
+    grid-template-areas:
+    'tasks tasks sites'
+    'tasks tasks quotes';
+    gap: 20px;
+}
+.gridelement{
+    background-color: darkolivegreen;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column;
+    grid-area: tasks;
+}
+.sites{
+    display: grid;
+    grid-area: sites;
+}
+.quotes{
+   grid-area: quotes; 
+   background-color: orangered;
+}
