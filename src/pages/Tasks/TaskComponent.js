@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Task.css'
 
 const TaskComponent = (props) => {
 
     function booleanCheck(check){
-        // if (check){
-        //     return("Done")
-        // }
-        // else{
-        //     return("Not Done")
-        // }
         return check ? "done" : "not done";
     }
 

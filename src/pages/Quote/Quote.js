@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import './Quote.css'
 
 const Quote = (props) =>{
-    console.log(props.index)
-    console.log(props.quotelist)
+    // console.log(props.index)
+    // console.log(props.quotelist)
     return(
-        <div classname="quote">
-            <p>"{props.quotelist[props.index].quote}"</p>
-            <h2>-{props.quotelist[props.index].author}</h2>
+        <div className="quote">
+            <p>"{props.quote}"</p>
+            <div className="quotebox">
+                <h2>
+                    -{props.author},
+                </h2>
+                <h2>
+                    {props.category}
+                </h2>
+            </div>
         </div>
     )
 }

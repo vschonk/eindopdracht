@@ -3,9 +3,11 @@ import React from 'react';
 const Website = (props) => {
     return(
     <div>
-        <div>{props.name}</div>
-        <div>{props.description}</div>
+        <a href={props.url}>{props.name}</a>
+        <img src={props.icon} alt="Hoi"></img>
+        <p>{props.description}</p>
         <div>{props.visited}</div>
+
     </div>
     )
 }

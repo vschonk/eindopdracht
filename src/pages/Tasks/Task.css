@@ -10,3 +10,12 @@
     display: flex;
     justify-content: space-around;
 }
+.gridcontainertasks{
+    display: grid;
+    padding: 20px;
+    grid-auto-columns: 2fr 1fr;
+    grid-template-areas:
+    'tasks tasks progress'
+    'tasks tasks completedlist';
+    gap: 20px;
+}

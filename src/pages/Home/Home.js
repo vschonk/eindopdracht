@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
 import TaskComponent from '../Tasks/TaskComponent';
-import Website from '../Websites/Website'
 import Quote from '../Quote/Quote';
+import WebsiteShortComponent from '../Websites/WebsiteShortComponent';
 
 const Home = () => {
 
-    //  function randomnumber(max){
-    //      console.log("Random!")
-    //      var random = Math.floor(Math.random() * (max) )
-    //      console.log(random)
-    //     return(random);
-    //  }
+     function randomNumber(max){
+         console.log("Random!")
+         var random = Math.floor(Math.random() * (max) )
+         console.log(random)
+        return(random);
+     }
     
 
     useEffect(()=>{
@@ -20,10 +20,7 @@ const Home = () => {
         fetch('./resources/Website.json').then((response)=>response.json())
         .then((websitejson) => setWebsites(websitejson) )
         fetch('./resources/Civ5Techs.json').then((response)=>response.json())
-        .then((techjson) => {
-            console.log(techjson);
-            setTech(techjson);
-        })
+        .then((techjson) => setTech(techjson))
         fetch('./resources/Civ5Wonders.json').then((response)=>response.json())
         .then((wonderjson) => setWonder(wonderjson))
     },[])
@@ -38,7 +35,18 @@ const Home = () => {
     console.log(techs)
     const [wonders, setWonder] = useState([])
     console.log(wonders)
-    // const [randomNumber, setRandomNumber] = useState(1)
+
+    const wonder = wonders.length === 0 ? undefined : wonders[randomNumber(wonders.length)];
+    let quoteWonder = undefined;
+    if(wonder !== undefined) {
+        quoteWonder = <Quote quote={wonder.quote} author={wonder.author} category={wonder.category.name}/>
+    }
+
+    const tech = techs.length === 0 ? undefined : techs[randomNumber(techs.length)];
+    let quoteTech = undefined;
+    if(tech !== undefined) {
+        quoteTech = <Quote quote={tech.quote} author={tech.author} category={tech.category.name} />
+    }
 
 
     return(
@@ -57,10 +65,8 @@ const Home = () => {
 
             <div className="gridelement sites">
                 {websites.map((websites, index) => 
-                <Website 
+                <WebsiteShortComponent
                     name = {websites.name}
-                    description = {websites.description}
-                    visited={websites.visited}
                     key={index}
                 />                
                 )}
@@ -69,15 +75,8 @@ const Home = () => {
             </div>
 
             <div className="gridelement quotes">
-
-                        <Quote 
-                        quotelist = {wonders}
-                        index = {5}
-                        />
-                        <Quote 
-                        quotelist = {techs}
-                        index = {5}
-                        />
+                    {quoteWonder}
+                    {quoteTech}
             </div>
         </div>
     );

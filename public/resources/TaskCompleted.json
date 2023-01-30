@@ -5,7 +5,7 @@
     "category":"Urgent",
     "deadlinedate":"1/26/2023",
     "deadlinetime":"09:00",
-    "statusdone":false,
+    "statusdone":true,
     "taskowner":"Victor Schonk"
 },
 {
@@ -14,7 +14,7 @@
     "category":"Normal",
     "deadlinedate":"1/29/2023",
     "deadlinetime":"12:00",
-    "statusdone":false,
+    "statusdone":true,
     "taskowner":"Victor Schonk"
 },
 {
@@ -24,24 +24,6 @@
     "deadlinedate":"1/24/2023",
     "deadlinetime":"06:30",
     "statusdone":true,
-    "taskowner":"Victor Schonk"
-},
-{
-    "id":4,
-    "name":"Finish the Lorum Website",
-    "category":"Urgent",
-    "deadlinedate":"2/28/2023",
-    "deadlinetime":"12:00",
-    "statusdone":false,
-    "taskowner":"Victor Schonk"
-},
-{
-    "id":5,
-    "name":"Don't be lazy",
-    "category":"Expired",
-    "deadlinedate":"1/22/2023",
-    "deadlinetime":"18:00",
-    "statusdone":false,
     "taskowner":"Victor Schonk"
 }
 
