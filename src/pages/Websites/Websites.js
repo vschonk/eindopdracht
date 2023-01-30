@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Website from './Website';
 import Quote from '../Quote/Quote';
+import './Websites.css'
 
 const Websites = () => {
 
@@ -14,7 +15,7 @@ const Websites = () => {
     useEffect(()=>{
         fetch('./resources/Website.json').then((response) => response.json())
         .then((websitejson) => setWebsite(websitejson))
-        .then((techjson) => setTech(techjson))
+        
         fetch('./resources/Civ5Wonders.json').then((response)=>response.json())
         .then((wonderjson) => setWonder(wonderjson))
         fetch('./resources/Civ5Techs.json').then((response)=>response.json())
@@ -27,21 +28,21 @@ const Websites = () => {
 
     console.log(techs)
 
-    // const wonder = wonders.length === 0 ? undefined : wonders[randomNumber(wonders.length)];
-    // let quoteWonder = undefined;
-    // if(wonder !== undefined) {
-    //     quoteWonder = <Quote quote={wonder.quote} author={wonder.author} category={wonder.category.name}/>
-    // }
+    const wonder = wonders.length === 0 ? undefined : wonders[randomNumber(wonders.length)];
+    let quoteWonder = undefined;
+    if(wonder !== undefined) {
+        quoteWonder = <Quote quote={wonder.quote} author={wonder.author} category={wonder.category.name}/>
+    }
 
-    // const tech = techs.length === 0 ? undefined : techs[randomNumber(techs.length)];
-    // let quoteTech = undefined;
-    // if(tech !== undefined) {
-    //     quoteTech = <Quote quote={tech.quote} author={tech.author} category={tech.category.name} />
-    // }
+    const tech = techs.length === 0 ? undefined : techs[randomNumber(techs.length)];
+    let quoteTech = undefined;
+    if(tech !== undefined) {
+        quoteTech = <Quote quote={tech.quote} author={tech.author} category={tech.category.name} />
+    }
 
     return(
-    <div>
-        <div className="websitelist">
+    <div className="websitegrid">
+        <div className="websites gridelement">
         {website.map((website, index) =>
             <Website
             key = {index} 
@@ -53,8 +54,9 @@ const Websites = () => {
             icon = {website.icon}
             />)}
         </div>
-        <div className="clickedwebsites">
+        <div className="clickcounter gridelement">
             <h2>Most clicked websites!</h2>
+            <div className="clickbox">
             {website.map((website,index)=>
             <Website 
             key= {index}
@@ -62,10 +64,11 @@ const Websites = () => {
             visited = {website.timesvisited}
             />
             )}
+            </div>
         </div>
-        <div className="quote">
-                {/* {quoteTech}
-                {quoteWonder} */}
+        <div className="quotes">
+                {quoteTech}
+                {quoteWonder}
         </div>
     </div>
     )}

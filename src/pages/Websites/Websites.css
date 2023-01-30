@@ -1,0 +1,26 @@
+.websitegrid{
+    padding: 20px;
+    display: grid;
+    grid-auto-columns: 2fr 1fr;
+    grid-template-areas:
+    'websites clickcounter'
+    'websites quotes';
+    gap: 20px;
+}
+.websites{
+    display: flex;
+    flex-direction: column;
+    grid-area: websites;
+}
+.clickcounter{
+    grid-area: clickcounter;
+}
+.clickbox{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+.quotes{
+   grid-area: quotes; 
+   background-color: orangered;
+}
