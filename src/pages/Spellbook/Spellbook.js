@@ -3,32 +3,56 @@ import Spell from './Spell';
 
 const Spellbook = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('https://www.dnd5eapi.co/api/spells').then((response) => response.json())
-        .then((spellsjson) => setSpell(spellsjson.results))
-        },[])
+            .then((spellsjson) => fillArray(spellsjson.results))
+    }, [])
+
+    const fillArray = (spells) => {
+        setSpell(spells)
+        buildSpellArray(spells);
+    }
+
+    async function buildSpellArray(spells) {
+       let returnArray = []
+       for(let i = 0; i < 20 ; i++ ){
+        const temp = spells[randomNumber(spells.length)]
+        let description = []
+        await fetch(`https://www.dnd5eapi.co${temp.url}`).then(response => response.json())
+        .then(responseJson=> description = responseJson.desc)
+        const newSpellWithDesc = {
+            ...temp,
+            description
+        }
+        returnArray.push(newSpellWithDesc);
+       }
+       console.log(returnArray)
+       setSpellArray(returnArray)
+    }
+
+    function randomNumber(max){
+        return Math.floor(Math.random()*max)
+    }
+
+
 
     const [spells, setSpell] = useState([])
     const [spellArray, setSpellArray] = useState([])
     console.log(spells)
 
 
-    if (spells !== undefined){
-        console.log(spells[1])
-        spellArray.push(spells[2])
-        spellArray.push(spells[5])
-        
 
-    }
 
 
     return(
-        <div>
-            {spellArray.map((spell, index) => 
+        <div className="grid">
+             {spellArray.length > 0 && spellArray.map((spell, index) => 
             <Spell
             key={index}
+            index={index}
             name={spell.name}
-            />)}
+            description={spell.description}
+            />)} 
         </div>
     );
     }

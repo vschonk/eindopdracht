@@ -2,3 +2,19 @@
     display: flex;
     justify-content: space-around;
 }
+
+.quote{
+background-color: antiquewhite;
+border-radius: 20px;
+padding: 20px;
+}
+.quotes{
+    padding: 20px;
+    grid-area: quotes; 
+    background-color: orangered;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+ 
+ }

@@ -20,7 +20,3 @@
     display: grid;
     grid-area: sites;
 }
-.quotes{
-   grid-area: quotes; 
-   background-color: orangered;
-}

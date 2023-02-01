@@ -9,7 +9,7 @@ const Quote = (props) =>{
             <p>"{props.quote}"</p>
             <div className="quotebox">
                 <h2>
-                    -{props.author},
+                    -{props.author}:
                 </h2>
                 <h2>
                     {props.category}

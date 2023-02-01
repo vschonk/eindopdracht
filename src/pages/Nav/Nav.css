@@ -1,10 +1,13 @@
 .navbox{
     position: fixed;
+    top: 150px;
+    left: 10px;
     display: flex;
     flex-direction: column;
     width: 150px;
     background-color: aqua;
-    padding: 80px 0px 150px 20px;
+    padding: 120px 0px 175px 20px;
+    border-radius: 20px;
 }
 .avatar{
     height: 100px;
