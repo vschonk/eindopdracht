@@ -45,6 +45,8 @@ const Spellbook = () => {
 
 
     return(
+        <div>
+            <h1>Twenty wondrous and randomly generated spells to practice today!</h1>
         <div className="grid">
              {spellArray.length > 0 && spellArray.map((spell, index) => 
             <Spell
@@ -53,6 +55,7 @@ const Spellbook = () => {
             name={spell.name}
             description={spell.description}
             />)} 
+        </div>
         </div>
     );
     }
