@@ -23,3 +23,19 @@
     border-radius: 15px;
     background-color: aliceblue;
 }
+.circleheader{
+    width: min-content;
+    padding: 7px;
+    border-radius: 50px;
+    background-color: crimson;
+}
+.spellheader{
+    padding: 7px;
+}
+.flexspell{
+    display: flex;
+    gap: 20px;
+}
+.spelldescription{
+    margin-top: 0px;
+}
