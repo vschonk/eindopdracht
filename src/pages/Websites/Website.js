@@ -3,8 +3,8 @@ import React from 'react';
 const Website = (props) => {
     return(
     <div>
-        <a href={props.url}>{props.name}</a>
-        <img src={props.icon} alt="Hoi"></img>
+        <a href={props.url} >{props.name}</a>
+        <img src={props.icon} alt="Hoi" className="favicon"></img>
         <p>{props.description}</p>
         <div>{props.visited}</div>
 

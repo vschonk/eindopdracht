@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Spell from './Spell';
 
 const Spellbook = () => {
@@ -14,24 +14,24 @@ const Spellbook = () => {
     }
 
     async function buildSpellArray(spells) {
-       let returnArray = []
-       for(let i = 0; i < 20 ; i++ ){
-        const temp = spells[randomNumber(spells.length)]
-        let description = []
-        await fetch(`https://www.dnd5eapi.co${temp.url}`).then(response => response.json())
-        .then(responseJson=> description = responseJson.desc)
-        const newSpellWithDesc = {
-            ...temp,
-            description
+        let returnArray = []
+        for (let i = 0; i < 20; i++) {
+            const temp = spells[randomNumber(spells.length)]
+            let description = []
+            await fetch(`https://www.dnd5eapi.co${temp.url}`).then(response => response.json())
+                .then(responseJson => description = responseJson.desc)
+            const newSpellWithDesc = {
+                ...temp,
+                description
+            }
+            returnArray.push(newSpellWithDesc);
         }
-        returnArray.push(newSpellWithDesc);
-       }
-       console.log(returnArray)
-       setSpellArray(returnArray)
+        console.log(returnArray)
+        setSpellArray(returnArray)
     }
 
-    function randomNumber(max){
-        return Math.floor(Math.random()*max)
+    function randomNumber(max) {
+        return Math.floor(Math.random() * max)
     }
 
 
@@ -44,19 +44,19 @@ const Spellbook = () => {
 
 
 
-    return(
+    return (
         <div>
             <h1>Twenty wondrous and randomly generated spells to practice today!</h1>
-        <div className="grid">
-             {spellArray.length > 0 && spellArray.map((spell, index) => 
-            <Spell
-            key={index}
-            index={index}
-            name={spell.name}
-            description={spell.description}
-            />)} 
-        </div>
+            <div className="grid">
+                {spellArray.length > 0 && spellArray.map((spell, index) =>
+                    <Spell
+                        key={index}
+                        index={index}
+                        name={spell.name}
+                        description={spell.description}
+                    />)}
+            </div>
         </div>
     );
-    }
+}
 export default Spellbook

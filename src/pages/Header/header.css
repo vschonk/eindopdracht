@@ -5,4 +5,14 @@
     background-image:url(../../../public/images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    align-items: baseline;
+    color: whitesmoke;
+    -webkit-text-stroke: black 1.25px;
+    font-size: 1em;
+    height: 60px;
+    border-color: black;
+    border-bottom-style: solid;
 }

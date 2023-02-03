@@ -43,6 +43,15 @@
     "deadlinetime":"18:00",
     "statusdone":false,
     "taskowner":"Victor Schonk"
+},
+{
+    "id":6,
+    "name":"Work on Arrays",
+    "category":"Urgent",
+    "deadlinedate":"5/21/2023",
+    "deadlinetime":"18:00",
+    "statusdone":true,
+    "taskowner":"Victor Schonk"
 }
 
 

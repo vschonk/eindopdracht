@@ -4,7 +4,7 @@ import TaskComponent from '../Tasks/TaskComponent';
 import Quote from '../Quote/Quote';
 import WebsiteShortComponent from '../Websites/WebsiteShortComponent';
 
-const Home = () => {
+const Home = (props) => {
 
      function randomNumber(max){
          console.log("Random!")
@@ -15,8 +15,8 @@ const Home = () => {
     
 
     useEffect(()=>{
-        fetch('./resources/Task.json').then((response)=>response.json())
-        .then((taskjson) => setTasks(taskjson) )
+        // fetch('./resources/Task.json').then((response)=>response.json())
+        // .then((taskjson) => setTasks(taskjson) )
         fetch('./resources/Website.json').then((response)=>response.json())
         .then((websitejson) => setWebsites(websitejson) )
         fetch('./resources/Civ5Techs.json').then((response)=>response.json())
@@ -27,14 +27,15 @@ const Home = () => {
 
 
 
-    const [tasks,setTasks] = useState([])
-    console.log(tasks)
+    // const [tasks,setTasks] = useState([])
+    console.log(props.tasks)
     const [websites, setWebsites] = useState([])
     console.log(websites)
     const [techs, setTech] = useState([])
     console.log(techs)
     const [wonders, setWonder] = useState([])
     console.log(wonders)
+    const [refreshCall, setRefreshCall] = useState(false)
 
     const wonder = wonders.length === 0 ? undefined : wonders[randomNumber(wonders.length)];
     let quoteWonder = undefined;
@@ -50,9 +51,9 @@ const Home = () => {
 
 
     return(
-        <div className="gridcontainer">
+        <div className="gridcontainerhome">
             <div className="gridelement tasks">
-                {tasks.map((tasks, index) =>
+                {props.tasks.filter(task => !task.statusdone).map((tasks, index) =>
                 <TaskComponent
                     name={tasks.name}
                     key={index}
@@ -60,14 +61,19 @@ const Home = () => {
                     category = {tasks.category}
                     deadlinedate = {tasks.deadlinedate}
                     deadlinetime = {tasks.deadlinetime}
-                    statusdone = {tasks.statusdone} />)}
+                    statusdone = {tasks.statusdone}
+                    tasks = {props.tasks}
+                    setRefreshCall={setRefreshCall}
+                    setTasks = {props.setTasks} />)}
             </div>
 
-            <div className="gridelement sites">
+            <div className="gridelement sites shortwebsitecontainer">
                 {websites.map((websites, index) => 
                 <WebsiteShortComponent
                     name = {websites.name}
                     key={index}
+                    icon={websites.icon}
+                    link={websites.url}
                 />                
                 )}
 

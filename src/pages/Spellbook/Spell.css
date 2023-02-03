@@ -9,9 +9,7 @@
     overflow: auto;
 } */
 
-::-webkit-scrollbar-button{
-    height: 0;
-}
+
 .scroller {
     height: 200px;
     overflow-y: scroll;

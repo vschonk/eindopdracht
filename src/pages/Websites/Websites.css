@@ -24,3 +24,17 @@
    grid-area: quotes; 
    background-color: orangered;
 }
+.favicon{
+    height: 1.5em;
+    width:  1.5em
+}
+.shortwebsite{
+    display: flex;
+    gap: 10px;
+    vertical-align: middle;
+    height: 20px;
+}
+.shortwebsitecontainer{
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100px;
+}

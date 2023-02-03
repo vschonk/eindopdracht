@@ -2,10 +2,11 @@ import React from 'react';
 
 const WebsiteShortComponent = (props) => {
     return(
-    <div>
-        <div>{props.name}</div>
-        <div>{props.visited}</div>
-    </div>
+        <div className="shortwebsite">
+            <img src={props.icon} className="favicon"></img>
+            <a href={props.link}>{props.name}</a>
+            <div>{props.visited}</div>
+        </div>
     )
 }
 

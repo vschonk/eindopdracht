@@ -1,4 +1,4 @@
-.gridcontainer{
+.gridcontainerhome{
     display: grid;
     padding: 20px;
     grid-auto-columns: 2fr 1fr;

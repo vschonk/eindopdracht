@@ -5,7 +5,7 @@
         "url":"https://www.reddit.com/",
         "description":"A sometimes interesting website filled with too many people trying to be funny or interesting. Unhealthy obsession with politics.",
         "timesvisited":0,
-        "icon":""
+        "icon":"images/reddit.png"
     },
     {
         "id":2,
@@ -13,14 +13,22 @@
         "url":"https://www.youtube.com/",
         "description":"My favorite Russian misinformation propaganda spreading website.",
         "timesvisited":0,
-        "icon":""
+        "icon":"images/youtube.png"
     },
     {
         "id":3,
-        "name":"Foundry Virtual Tabletop",
+        "name":"FoundryVTT",
         "url":"https://foundryvtt.com/",
         "description":"A place where you can play virtual tabletop games.",
         "timesvisited":0,
-        "icon":""
+        "icon":"images/foundry.png"
+    },
+    {
+        "id":4,
+        "name":"GitHub",
+        "url":"https://github.com/",
+        "description":"Have your code borrowed by your AI overlords today!",
+        "timesvisited":5,
+        "icon":"images/github.png"
     }
 ]

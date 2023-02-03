@@ -27,3 +27,29 @@
     padding: 20px 20px 20px 20px;
     background-color:rebeccapurple
 }
+.gridcontainertasks{
+    display: grid;
+    padding: 20px;
+    grid-auto-columns: 2fr 1fr;
+    grid-template-areas:
+    'tasks tasks progress'
+    'tasks tasks completedlist';
+    gap: 20px;
+    height: 800px;
+}
+.scroller {
+    height: 200px;
+    overflow-y: scroll;
+    scrollbar-color: black;
+    scrollbar-width: thin;
+}
+.checkmark{
+    height: 25px;
+    transition: ease-in-out 0.2s;
+    position: inherit
+}
+.checkmark:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    transform: rotate(360deg);
+}

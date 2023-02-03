@@ -2,9 +2,14 @@ import React from 'react';
 import './Task.css'
 
 const TaskComponent = (props) => {
-
-    function booleanCheck(check){
-        return check ? "done" : "not done";
+    function flip(){
+        let wholeTaskArray = props.tasks
+        let singleTask = wholeTaskArray.find(x => x.id === props.id)
+        singleTask.statusdone = true
+        wholeTaskArray[wholeTaskArray.findIndex(x => x.id === props.id)] = singleTask
+        props.setTasks(wholeTaskArray)
+        props.setRefreshCall(true)
+        console.log(props.tasks)
     }
 
     return(
@@ -13,11 +18,9 @@ const TaskComponent = (props) => {
         <p>{props.category}</p>
         <p>{props.name}</p>
         <div className="flex">
-            <p>{booleanCheck(props.statusdone)}</p>
-            <p>{props.deadlinedate}  {props.deadlinetime}</p>
+            <p>{props.statusdone}</p>
+            <p>{props.deadlinedate}  {props.deadlinetime} <img src="images/checkmark.png" onClick={flip} className="checkmark"></img></p>
         </div>
-
-
     </div>)
 }
 
